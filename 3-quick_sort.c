@@ -26,14 +26,14 @@ void quick_sort(int *array, size_t size)
 */
 void quick_sort_recursion(int *arr, int low, int high, size_t size)
 {
-	int pivot_index;
+	int pivot;
 
 	if (low < high)
 	{
-		pivot_index = quick_sort_partition(arr, low, high, size);
+		pivot = quick_sort_partition(arr, low, high, size);
 
-		quick_sort_recursion(arr, low, pivot_index - 1, size);
-		quick_sort_recursion(arr, pivot_index + 1, high, size);
+		quick_sort_recursion(arr, low, pivot - 1, size);
+		quick_sort_recursion(arr, pivot + 1, high, size);
 	}
 }
 
@@ -74,10 +74,10 @@ int quick_sort_partition(int *arr, int low, int high, size_t size)
 /**
  * quick_sort_swap- swap two integers
  *
- * @a:                   pointer to int
- * @b:                   pointer to int
+ * @a:              pointer to int
+ * @b:              pointer to int
  *
- * Return:               nothing
+ * Return:          nothing
  */
 void quick_sort_swap(int *a, int *b)
 {
