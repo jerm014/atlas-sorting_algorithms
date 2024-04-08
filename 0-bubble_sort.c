@@ -19,11 +19,11 @@ void swap(int *a, int *b)
 
 void bubble_sort(int *array, size_t size)
 {
-	int a, b;
+	size_t a, b;
 
 	if (size > 1)
 	{
-		for (a = 0; a < (size -1); a++)
+		for (a = 0; a < (size - 1); a++)
 		{
 			for (b = 1; b < size; b++)
 			{
