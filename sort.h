@@ -16,4 +16,9 @@ typedef struct listint_s
     struct listint_s *prev;
     struct listint_s *next;
 } listint_t;
+
+/* Functions */
+void swap(int *, int *);
+void bubble_sort(int *, size_t);
+
 #endif
