@@ -14,7 +14,8 @@
 
 void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
 {
-	int index, tmp, pivot, first = start - 1;
+	size_t index, first = start - 1;
+	int tmp, pivot;
 
 	if (start >= end)
 		return;
