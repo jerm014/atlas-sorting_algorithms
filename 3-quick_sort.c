@@ -13,7 +13,7 @@
  */
 void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
 {
-	int index, pivot, first;
+	size_t index, pivot, first;
 	
 	first = start - 1;
 
@@ -44,9 +44,9 @@ void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
  *
  * Return:               nothing
  */
-void quick_sort_sort_swap(size_t *a, size_t *b)
+void quick_sort_sort_swap(int *a, int *b)
 {
-	size_t swap;
+	int swap;
 
 	swap = *a;
 	*a = *b;
