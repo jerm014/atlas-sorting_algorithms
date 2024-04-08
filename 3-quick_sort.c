@@ -11,12 +11,10 @@
  * Return:          nothing
  *
  */
+
 void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
 {
-	size_t index, first;
-	int pivot;
-	
-	first = start - 1;
+	int index, tmp, pivot, first = start - 1;
 
 	if (start >= end)
 		return;
@@ -27,9 +25,14 @@ void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
 	{
 		if (array[index] <= pivot)
 		{
-			quick_sort_sort_swap(&array[first], &array[index]);
+			first++;
+			tmp = array[first];
+			array[first] = array[index];
+			array[index] = tmp;
 			if (index != first)
+			{
 				print_array(array, size);
+			}
 		}
 	}
 
