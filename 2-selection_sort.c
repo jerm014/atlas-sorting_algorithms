@@ -1,12 +1,12 @@
 #include "sort.h"
 
 /**
- * seletion_sort_swap- swap two integers
+ * selection_sort_swap- swap two integers
  *
- * @a:                 pointer to int
- * @b:                 pointer to int
+ * @a:                  pointer to int
+ * @b:                  pointer to int
  *
- * Return:             nothing
+ * Return:              nothing
  */
 void selection_sort_swap(int *a, int *b)
 {
