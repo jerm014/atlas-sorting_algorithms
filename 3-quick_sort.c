@@ -17,7 +17,6 @@ void quick_sort_sort(int *array, int low, int high, int size)
 	pivot = array[high];
 	start = low;
 	end = high;
-	temp = 0;
 
 	if (low >= high)
 		return;
