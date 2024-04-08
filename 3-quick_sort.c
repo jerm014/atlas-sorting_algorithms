@@ -82,11 +82,5 @@ void quick_sort_sort_swap(int *a, int *b)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL)
-		return;
-
-	if (size < 2)
-		return;
-
-	quick_sort_sort(array, size, 0, size - 1);
+	quick_recursion(array, 0, (int)(size - 1), size);
 }
