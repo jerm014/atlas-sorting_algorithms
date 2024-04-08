@@ -13,7 +13,8 @@
  */
 void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
 {
-	size_t index, pivot, first;
+	size_t index, first;
+	int pivot;
 	
 	first = start - 1;
 
