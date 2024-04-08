@@ -1,14 +1,14 @@
 #include "sort.h"
 
 /**
- * swap-   swap two integers
+ * bubble_sort_swap- swap two integers
  *
- * @a:     pointer to int
- * @b:     pointer to int
+ * @a:               pointer to int
+ * @b:               pointer to int
  *
- * Return: nothing
+ * Return:           nothing
  */
-void swap(int *a, int *b)
+void bubble_sort_swap(int *a, int *b)
 {
 	int swap;
 
@@ -37,7 +37,7 @@ void bubble_sort(int *array, size_t size)
 			{
 				if (array[b - 1] > array[b])
 				{
-					swap(&array[b - 1], &array[b]);
+					bubble_sort_swap(&array[b - 1], &array[b]);
 					print_array(array, size);
 				}
 			}
