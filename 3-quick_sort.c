@@ -1,44 +1,58 @@
 #include "sort.h"
 
 /**
- * quick_sort_sort- sort an array using quicksort and recursion
- *
- * @array:          the array to sort
- * @size:           the soze of the array to sort
- * @start:          the beginning element of this partition
- * @end:            the end element of this partition
- *
- * Return:          nothing
- *
- */
-
-void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
+* partition- partition the array and pick the last element as pivot
+*            (lomuto partition scheme)
+*
+* @arr:      the array
+* @low:      lowest point
+* @high:     highest point
+* @size:     array size
+*
+* Return:    index of the pivot
+*
+*/
+int partition(int *arr, int low, int high, size_t size)
 {
-	size_t index, first = start - 1;
-	int tmp, pivot;
+	int pivot = arr[high];
 
-	if (start >= end)
-		return;
+	int i = low - 1, j;
 
-	pivot = array[end];
-
-	for (index = start; index <= end; index++)
+	for (j = low; j <= high; j++)
 	{
-		if (array[index] <= pivot)
+		if (arr[j] < pivot && arr[++i] != arr[j])
 		{
-			first++;
-			tmp = array[first];
-			array[first] = array[index];
-			array[index] = tmp;
-			if (index != first)
-			{
-				print_array(array, size);
-			}
+			quick_sort_sort_swap(&arr[i], &arr[j]);
+			print_array(arr, size);
 		}
 	}
+	if (arr[++i] != arr[high])
+	{
+		quick_sort_sort_swap(&arr[i], &arr[high]);
+		print_array(arr, size);
+	}
+	return (i);
+}
 
-	quick_sort_sort(array, size, start, first - 1);
-	quick_sort_sort(array, size, first + 1, end);
+/**
+* quick_recursion- recursively sort partition until array is sorted
+* @arr:            array
+* @low:            lowest point
+* @high:           highest point
+* @size:           array size
+*
+*/
+void quick_recursion(int *arr, int low, int high, size_t size)
+{
+	int pivot_index;
+
+	if (low < high)
+	{
+		pivot_index = partition(arr, low, high, size);
+
+		quick_recursion(arr, low, pivot_index - 1, size);
+		quick_recursion(arr, pivot_index + 1, high, size);
+	}
 }
 
 /**
