@@ -5,7 +5,7 @@
  *
  * @a:     pointer to int
  * @b:     pointer to int
- * 
+ *
  * Return: nothing
  */
 void swap(int *a, int *b)
@@ -19,10 +19,10 @@ void swap(int *a, int *b)
 
 /**
  * bubble_sort- sort an array of integers using bubble sort
- * 
+ *
  * @array:      the array of integers to sort
  * @size:       the size of the array of integers to sort
- * 
+ *
  * Return:      nothing
 */
 void bubble_sort(int *array, size_t size)
