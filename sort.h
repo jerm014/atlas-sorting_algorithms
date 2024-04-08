@@ -24,6 +24,9 @@ void insertion_sort_list(listint_t **);
 void insertion_sort_list_swap(listint_t **, listint_t **, listint_t *);
 void selection_sort(int *, size_t);
 void selection_sort_swap(int *, int *);
+void quick_sort(int *array, size_t size);
+void quick_sort_sort(int *, int, int, int);
+void quick_sort_sort_swap(int *a, int *b);
 
 /* Support Functions */
 void print_array(const int *array, size_t size);
