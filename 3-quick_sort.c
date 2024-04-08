@@ -12,7 +12,7 @@
  */
 void quick_sort_sort(int *array, int low, int high, int size)
 {
-	int pivot, start, end, temp;
+	int pivot, start, end;
 
 	pivot = array[high];
 	start = low;
