@@ -1,52 +1,39 @@
 #include "sort.h"
 
 /**
- * quick_sort_sort- a recursive quicksort function
+ * quick_sort_sort- sort an array using quicksort and recursion
  *
- * @array:          array to be sorted
- * @low:            the start of the part to sort
- * @high:           the end of the part to sort
- * @size:           size of the array
+ * @array:          the array to sort
+ * @size:           the soze of the array to sort
+ * @start:          the beginning element of this partition
+ * @end:            the end element of this partition
  *
  * Return:          nothing
+ *
  */
-void quick_sort_sort(int *array, int low, int high, int size)
+void quick_sort_sort(int *array, size_t size, size_t start, size_t end)
 {
-	int pivot, start, end;
+	int index, pivot, first;
+	
+	first = start - 1;
 
-	pivot = array[high];
-	start = low;
-	end = high;
-
-	if (low >= high)
+	if (start >= end)
 		return;
-	while (start < end)
-	{
-		while (array[start] < pivot && start < end)
-		{
-			start++;
-		}
-		while (array[end] >= pivot && start < end)
-		{
-			end--;
-		}
 
-		if (start < end)
+	pivot = array[end];
+
+	for (index = start; index <= end; index++)
+	{
+		if (array[index] <= pivot)
 		{
-			quick_sort_sort_swap(&array[start], &array[end]);
-			print_array(array, size);
+			quick_sort_sort_swap(&array[first], &array[index]);
+			if (index != first)
+				print_array(array, size);
 		}
 	}
 
-	if (high != end)
-	{
-		array[high] = array[start];
-		array[start] = pivot;
-		print_array(array, size);
-	}
-
-	quick_sort_sort(array, low, start - 1, size);
-	quick_sort_sort(array, start + 1, high, size);
+	quick_sort_sort(array, size, start, first - 1);
+	quick_sort_sort(array, size, first + 1, end);
 }
 
 /**
